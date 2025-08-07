@@ -1,0 +1,24 @@
+/* Formatação Paragrafo*/
+
+p {
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 700px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+h1  {
+    color:color-mix(in srgb, orange 60%, blue 40%);
+    text-align: center;
+    font: bold;
+    font-size: 50px;
+}
+
+h2 {
+    color: color-mix(in srgb, darkgreen 80%, brown 30%);
+    text-align: center;
+    font: bolder;
+    font-size: 25px;
+}

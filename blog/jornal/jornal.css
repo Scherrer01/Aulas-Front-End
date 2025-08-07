@@ -1,0 +1,188 @@
+/* jornal.css */
+
+/* Reset e box‑sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif; /* fonte clássica de jornal */
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #1c1f33;
+  background: #f5f2ea url('paper-texture.png') repeat; /* textura de papel sutil */
+  padding: 2rem;
+  text-align: justify;
+}
+
+/* Estrutura do jornal como grid */
+.newspaper {
+  display: grid;
+  grid-template-rows: auto 1px 1fr 1px auto;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Divisórias horizontais */
+.divider {
+  background-color: #999;
+  height: 1px;
+  margin: 1.5rem 0;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.newspaper-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.subtitle {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #555;
+}
+.edition-info {
+  font-size: 0.9rem;
+  color: #444;
+}
+.edition-info span {
+  display: inline-block;
+  margin: 0 0.8rem;
+}
+
+/* Conteúdo com colunas */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  gap: 1rem;
+}
+.column {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+}
+.news-article + .news-article {
+  margin-top: 1.5rem;
+}
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Imagens */
+.image-placeholder img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.image-caption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+/* Rodapé */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+.footer-section {
+  flex: 1;
+}
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.footer-section ul {
+  list-style: none;
+}
+.footer-section ul li {
+  margin-bottom: 0.3rem;
+}
+.quote {
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}
+
+/* Estilo para impressão em papel físico */
+@media print {
+  body {
+    background: #fff !important;
+    font-size: 12pt;
+    color: #000;
+    padding: 0;
+    margin: 0;
+  }
+  .divider, .image-placeholder img, footer, .newspaper {
+    background: none !important;
+    box-shadow: none !important;
+  }
+  nav, .no-print {
+    display: none !important;
+  }
+  article {
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 2cm;
+  }
+}
+
+.image-placeholder {
+    text-align: center; /* centraliza todo conteúdo em linha */
+    margin-top: 20px; /* espaço entre a imagem e o botão */
+}
+
+.box-office-btn {
+    display: inline-block;
+    background-color: #e50914;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    text-align: center;
+}
+
+.box-office-btn:hover {
+    background-color: #b20710;
+    transform: scale(1.05);
+}
+
+.box-office-btn:active {
+    background-color: #7c050b;
+    transform: scale(0.98);
+}
+

@@ -1,0 +1,129 @@
+/* Reset e Variáveis */
+:root {
+  --cor-primaria: #2c3e50;
+  --cor-secundaria: #e74c3c;
+  --cor-texto: #333;
+  --cor-fundo: #f9f9f9;
+  --cor-destaque: #ecf0f1;
+  --fonte-principal: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  padding: 0;
+  margin: 0;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(135deg, var(--cor-primaria), #1a1a1a);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+/* Conteúdo Principal */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+article {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--cor-primaria);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--cor-secundaria);
+  display: inline-block;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Destaques */
+article:nth-child(odd) {
+  background-color: var(--cor-destaque);
+}
+
+/* Efeitos Visuais */
+article {
+  position: relative;
+  overflow: hidden;
+}
+
+article::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--cor-secundaria);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  main {
+    padding: 0 1rem 2rem;
+  }
+  
+  article {
+    padding: 1.5rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+article {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+article:nth-child(2) { animation-delay: 0.1s; }
+article:nth-child(3) { animation-delay: 0.2s; }
